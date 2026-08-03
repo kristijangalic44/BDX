@@ -92,7 +92,7 @@
       font-size:0.78rem;
       font-style:italic;
       color:#6b6b68;
-      margin:0 0 20px;
+      margin:0 0 32px;
       line-height:1.4;
     }
 
@@ -150,7 +150,7 @@
 
     .pins{
       display:grid;
-      gap:12px;
+      gap:10px;
       margin-top:20px;
       padding-top:16px;
       border-top:1px solid var(--line);
@@ -161,7 +161,20 @@
       display:flex;
       gap:10px;
       align-items:flex-start;
+      text-decoration:none;
+      color:inherit;
+      cursor:pointer;
+      padding:10px 14px;
+      border-radius:var(--radius);
+      background:var(--btn);
+      border:1px solid var(--btn-border);
+      box-shadow:var(--shadow);
+      transition:background .15s ease, transform .04s ease, border-color .15s ease;
     }
+
+    .pin:hover{ background:var(--btn-hover); border-color:#dfe3e8; }
+    .pin:hover .pin-label{ color:var(--red); }
+    .pin:active{ transform:translateY(1px); }
 
     .pin .ico{ margin-top:1px; }
 
@@ -241,7 +254,7 @@
 
     <!-- Pins -->
     <div class="pins">
-      <div class="pin">
+      <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
           <svg viewBox="0 0 24 24" role="img" aria-label="Standort">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path>
@@ -252,8 +265,8 @@
           <div class="pin-label">Büro</div>
           <div class="pin-addr">Pranger 6, 89079 Ulm</div>
         </div>
-      </div>
-      <div class="pin">
+      </a>
+      <a class="pin" href="https://www.google.com/maps/search/?api=1&query=Max-Eyth-Str.+41%2F3%2C+89231+Neu-Ulm" target="_blank" rel="noopener">
         <span class="ico" aria-hidden="true">
           <svg viewBox="0 0 24 24" role="img" aria-label="Standort">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path>
@@ -264,7 +277,7 @@
           <div class="pin-label">Gutachtenzentrum</div>
           <div class="pin-addr">Max-Eyth-Str. 41/3, 89231 Neu-Ulm</div>
         </div>
-      </div>
+      </a>
     </div>
 
   </main>
