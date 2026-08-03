@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gökhan Budak – Car Competence Center</title>
+  <title>Gökhan Budak – Budak Experts</title>
 
-  <!-- ✅ Google Fonts: Inter -->
+  <!-- ✅ Google Fonts: Outfit -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -19,6 +19,7 @@
       --radius:12px;
       --anthrazit:#2F2F2F;
       --icon:#2F2F2F;
+      --red:#D42E2E;
       --line:#d4d4d4;
     }
 
@@ -73,42 +74,26 @@
       color:#374151;
     }
 
+    .divider{
+      height:2px;
+      margin:16px 0 12px;
+      background:linear-gradient(90deg, var(--anthrazit) 0%, var(--anthrazit) 90%, var(--red) 90%, var(--red) 100%);
+    }
+
     .subrole{
-      margin:20px 0 8px;
-      font-size:0.78rem;
+      margin:0 0 6px;
+      font-size:0.82rem;
       font-weight:500;
-      color:#4b5563;
-      line-height:1.25;
-      letter-spacing:-0.2px;
-      white-space:nowrap;
+      color:#374151;
+      line-height:1.3;
     }
-
-    .quote-container{
-      position:relative;
-      margin:12px auto 16px;
-      padding:10px 0;
-      width:100%;
-      max-width:420px;
-    }
-
-    .quote-container::before,
-    .quote-container::after{
-      content:"";
-      position:absolute;
-      left:0; right:0;
-      border-top:1px solid var(--line);
-      transform:translateZ(0);
-    }
-
-    .quote-container::before{ top:0; }
-    .quote-container::after{ bottom:0; }
 
     .quote{
-      font-size:0.82rem;
+      font-size:0.78rem;
       font-style:italic;
-      color:#2f2f2f;
-      margin:0;
-      line-height:1.45;
+      color:#6b6b68;
+      margin:0 0 20px;
+      line-height:1.4;
     }
 
     .grid{ 
@@ -163,23 +148,51 @@
       font-variant-numeric:tabular-nums; 
     }
 
+    .pins{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      text-align:left;
+    }
+
+    .pin{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .pin .ico{ margin-top:1px; }
+
+    .pin-label{
+      font-size:0.85rem;
+      font-weight:600;
+      color:var(--anthrazit);
+    }
+
+    .pin-addr{
+      font-size:0.8rem;
+      color:#6b6b68;
+    }
+
     @media (max-width:380px) {
-      .subrole { font-size:0.75rem; }
-      .quote { font-size:0.78rem; }
+      .subrole { font-size:0.78rem; }
+      .quote { font-size:0.75rem; }
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <img src="logo.png" alt="Logo Car Competence Center" class="logo" />
+    <img src="logo.png" alt="Logo Budak Experts" class="logo" />
 
     <h1><span>Gökhan</span> <span>Budak</span></h1>
     <div class="role">Geschäftsführer</div>
-    <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
 
-    <div class="quote-container">
-      <p class="quote">"Spezialisiert auf Karosserie-Schadendiagnose<br>an Porsche-Fahrzeugen"</p>
-    </div>
+    <div class="divider"></div>
+
+    <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
+    <div class="quote">Spezialisiert auf Karosserie-Schadendiagnose an Porsche-Fahrzeugen.</div>
 
     <div class="grid">
       <!-- Phone 1 -->
@@ -224,6 +237,34 @@
         </span>
         <span class="txt">info@budak-experts.de</span>
       </a>
+    </div>
+
+    <!-- Pins -->
+    <div class="pins">
+      <div class="pin">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="Standort">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </span>
+        <div>
+          <div class="pin-label">Büro</div>
+          <div class="pin-addr">Pranger 6, 89079 Ulm</div>
+        </div>
+      </div>
+      <div class="pin">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="Standort">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </span>
+        <div>
+          <div class="pin-label">Gutachtenzentrum</div>
+          <div class="pin-addr">Max-Eyth-Str. 41/3, 89231 Neu-Ulm</div>
+        </div>
+      </div>
     </div>
 
   </main>
