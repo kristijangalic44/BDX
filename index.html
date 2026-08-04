@@ -31,7 +31,7 @@
       display:flex; 
       align-items:flex-start;
       justify-content:center;
-      padding-top:15px;
+      padding-top:60px;
       background:var(--bg); 
       color:var(--fg);
       font-family:"Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -87,7 +87,7 @@
     }
 
     .divider{
-      margin:16px 0 12px;
+      margin:28px 0 24px;
       display:block;
       width:100%;
       height:8px;
@@ -168,6 +168,37 @@
       font-weight:600; 
       font-variant-numeric:tabular-nums; 
       line-height:1.3;
+    }
+
+    .btn-save{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      margin-top:12px;
+      padding:14px 16px;
+      border-radius:var(--radius);
+      background:#ffffff;
+      border:1.5px solid var(--red);
+      color:var(--red);
+      font-weight:600;
+      font-size:0.92rem;
+      cursor:pointer;
+      transition:background .15s ease, transform .04s ease;
+    }
+
+    .btn-save:hover{ background:#fdf1f1; }
+    .btn-save:active{ transform:translateY(1px); }
+
+    .btn-save svg{
+      width:19px;
+      height:19px;
+      stroke:var(--red);
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
     }
 
     .pins{
@@ -283,7 +314,7 @@
 
     <div class="divider">
       <svg viewBox="0 0 1000 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 L1000,0 L1000,34 L850,34 L780,14 L0,14 Z" fill="#58595B"/>
+        <path d="M0,0 L1000,0 L1000,34 L500,34 L430,14 L0,14 Z" fill="#58595B"/>
       </svg>
     </div>
 
@@ -335,6 +366,16 @@
       </a>
     </div>
 
+    <button class="btn-save" type="button" onclick="downloadVCF()">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+        <path d="M7 10h5"></path>
+        <path d="M7 14h8"></path>
+        <circle cx="16.5" cy="9" r="1.5"></circle>
+      </svg>
+      Kontakt speichern
+    </button>
+
     <!-- Pins -->
     <div class="pins">
       <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
@@ -383,5 +424,33 @@
 
   </main>
 
+  <script>
+    function downloadVCF(){
+      const vcard =
+        "BEGIN:VCARD\r\n" +
+        "VERSION:3.0\r\n" +
+        "N:Budak;Gökhan;;;\r\n" +
+        "FN:Gökhan Budak\r\n" +
+        "ORG:Budak Experts Sachverständigen GmbH\r\n" +
+        "TITLE:Geschäftsführer\r\n" +
+        "TEL;TYPE=WORK,VOICE:+49 731 940 26 800\r\n" +
+        "TEL;TYPE=WORK,VOICE:+49 731 940 26 40\r\n" +
+        "TEL;TYPE=WORK,FAX:+49 731 940 26 782\r\n" +
+        "EMAIL;TYPE=INTERNET,WORK:info@budak-experts.de\r\n" +
+        "ADR;TYPE=WORK:;;Pranger 6;Ulm;;89079;Germany\r\n" +
+        "NOTE:KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm\r\n" +
+        "END:VCARD\r\n";
+
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement("a");
+      a.href = url;
+      a.download = "Goekhan-Budak.vcf";
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(url);
+      a.remove();
+    }
+  </script>
 </body>
 </html>
