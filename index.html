@@ -47,29 +47,41 @@
       text-align:center; 
     }
 
+    .header-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      text-align:left;
+      margin-bottom:16px;
+    }
+
+    .name-block{ text-align:left; }
+
     .logo{ 
-      width:400px; 
-      max-width:100%;
+      width:140px; 
+      max-width:32%;
       height:auto; 
-      margin:0 auto 20px; 
+      flex-shrink:0;
       display:block; 
     }
 
     h1{
-      margin:20px 0 0; 
-      font-size:1.9rem;
+      margin:0; 
+      font-size:1.6rem;
       color:var(--anthrazit);
       letter-spacing:.2px;
       font-weight:400;
       text-transform:uppercase;
+      line-height:1.15;
     }
 
     h1 span:first-child { font-weight:500; }
     h1 span:last-child { font-weight:700; }
 
     .role{
-      margin:-5px 0 0; 
-      font-size:1.05rem;
+      margin:2px 0 0; 
+      font-size:0.95rem;
       font-weight:500;
       color:var(--anthrazit);
     }
@@ -254,10 +266,13 @@
 </head>
 <body>
   <main class="card">
-    <img src="logo.png" alt="Logo Budak Experts" class="logo" />
-
-    <h1><span>Gökhan</span> <span>Budak</span></h1>
-    <div class="role">Geschäftsführer</div>
+    <div class="header-row">
+      <div class="name-block">
+        <h1><span>Gökhan</span> <span>Budak</span></h1>
+        <div class="role">Geschäftsführer</div>
+      </div>
+      <img src="logo.png" alt="Logo Budak Experts" class="logo" />
+    </div>
 
     <div class="divider"></div>
 
