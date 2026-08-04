@@ -1,4 +1,312 @@
-<!-- Pins -->
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gökhan Budak – Budak Experts</title>
+
+  <!-- ✅ Google Fonts: Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#1f2328;
+      --btn:#ffffff;
+      --btn-border:#e5e7eb;
+      --btn-hover:#f8fafc;
+      --shadow:0 2px 8px rgba(0,0,0,.05);
+      --radius:12px;
+      --anthrazit:#58595B;
+      --icon:#58595B;
+      --red:#D42E2E;
+      --line:#d4d4d4;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0; 
+      min-height:100vh;
+      display:flex; 
+      align-items:flex-start;
+      justify-content:center;
+      padding-top:15px;
+      background:var(--bg); 
+      color:var(--fg);
+      font-family:"Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight:400;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .card{ 
+      width:min(92vw,520px); 
+      padding:24px; 
+      text-align:center; 
+    }
+
+    .logo{ 
+      width:400px; 
+      max-width:100%;
+      height:auto; 
+      margin:0 auto 20px; 
+      display:block; 
+    }
+
+    h1{
+      margin:20px 0 0; 
+      font-size:1.9rem;
+      color:var(--anthrazit);
+      letter-spacing:.2px;
+      font-weight:400;
+      text-transform:uppercase;
+    }
+
+    h1 span:first-child { font-weight:500; }
+    h1 span:last-child { font-weight:700; }
+
+    .role{
+      margin:-5px 0 0; 
+      font-size:1.05rem;
+      font-weight:500;
+      color:var(--anthrazit);
+    }
+
+    .divider{
+      height:2px;
+      margin:16px 0 12px;
+      background:linear-gradient(90deg, var(--anthrazit) 0%, var(--anthrazit) 90%, var(--red) 90%, var(--red) 100%);
+    }
+
+    .subrole{
+      margin:0 0 6px;
+      font-size:0.82rem;
+      font-weight:500;
+      color:var(--anthrazit);
+      line-height:1.3;
+    }
+
+    .quote{
+      font-size:0.78rem;
+      font-style:italic;
+      color:#6b6b68;
+      margin:0 0 32px;
+      line-height:1.4;
+    }
+
+    .grid{ 
+      display:grid; 
+      gap:8px; 
+      margin-top:8px; 
+    }
+
+    .btn{
+      display:flex; 
+      align-items:center; 
+      justify-content:flex-start;
+      gap:10px;
+      padding:10px 14px; 
+      border-radius:var(--radius);
+      background:var(--btn); 
+      border:1px solid var(--btn-border);
+      text-decoration:none; 
+      color:var(--fg); 
+      box-shadow:var(--shadow);
+      transition:background .15s ease, transform .04s ease, border-color .15s ease, filter .15s ease;
+      font-weight:500;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .btn:hover{ background:var(--btn-hover); border-color:#dfe3e8; }
+    .btn:active{ transform:translateY(1px); }
+
+    .ico{ 
+      width:18px; 
+      height:18px; 
+      display:grid; 
+      place-items:center; 
+      color:var(--icon);
+    }
+
+    .ico svg{
+      width:18px;
+      height:18px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      display:block;
+    }
+
+    .txt{ 
+      font-size:0.92rem; 
+      font-weight:600; 
+      font-variant-numeric:tabular-nums; 
+    }
+
+    .pins{
+      display:flex;
+      flex-direction:column;
+      margin-top:20px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      text-align:left;
+    }
+
+    .pin-row{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:12px 4px;
+      text-decoration:none;
+      color:inherit;
+      cursor:pointer;
+    }
+
+    .pin-icon-wrap{
+      position:relative;
+      width:34px;
+      height:34px;
+      flex-shrink:0;
+    }
+
+    .pin-outline{
+      width:34px;
+      height:34px;
+      stroke:var(--anthrazit);
+      fill:none;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .pin-badge{
+      position:absolute;
+      right:-2px;
+      bottom:0;
+      width:15px;
+      height:15px;
+      background:#fff;
+      border:1.8px solid var(--anthrazit);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .pin-badge svg{
+      width:9px;
+      height:9px;
+      stroke:var(--anthrazit);
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+
+    .pin-divider{
+      width:2px;
+      align-self:stretch;
+      background:var(--red);
+      margin:2px 0;
+    }
+
+    .pin-text{
+      display:flex;
+      flex-direction:column;
+      gap:1px;
+    }
+
+    .pin-label{
+      font-size:0.8rem;
+      font-weight:700;
+      color:var(--red);
+      text-transform:uppercase;
+      letter-spacing:.3px;
+      margin-bottom:2px;
+    }
+
+    .pin-addr{
+      font-size:0.82rem;
+      font-weight:600;
+      color:var(--anthrazit);
+      line-height:1.35;
+    }
+
+    .pin-hr{
+      height:1px;
+      background:var(--line);
+      margin:0 4px;
+    }
+
+    @media (max-width:380px) {
+      .subrole { font-size:0.78rem; }
+      .quote { font-size:0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img src="logo.png" alt="Logo Budak Experts" class="logo" />
+
+    <h1><span>Gökhan</span> <span>Budak</span></h1>
+    <div class="role">Geschäftsführer</div>
+
+    <div class="divider"></div>
+
+    <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
+    <div class="quote">Spezialisiert auf Karosserie-Schadendiagnose an Porsche-Fahrzeugen.</div>
+
+    <div class="grid">
+      <!-- Phone 1 -->
+      <a class="btn" href="tel:+4973194026800">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
+          </svg>
+        </span>
+        <span class="txt">+49 731 940 26 800</span>
+      </a>
+
+      <!-- Phone 2 -->
+      <a class="btn" href="tel:+4973194026400">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
+          </svg>
+        </span>
+        <span class="txt">+49 731 940 26 40</span>
+      </a>
+
+      <!-- Printer / Fax -->
+      <a class="btn" href="tel:+4973194026782">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="Fax">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+        </span>
+        <span class="txt">+49 731 940 26 782</span>
+      </a>
+
+      <!-- Email (@) -->
+      <a class="btn" href="mailto:info@budak-experts.de">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-label="E-Mail">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-5.5 8.28"></path>
+          </svg>
+        </span>
+        <span class="txt">info@budak-experts.de</span>
+      </a>
+    </div>
+
+    <!-- Pins -->
     <div class="pins">
       <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
         <div class="pin-icon-wrap">
@@ -43,3 +351,8 @@
         </div>
       </a>
     </div>
+
+  </main>
+
+</body>
+</html>
