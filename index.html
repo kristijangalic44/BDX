@@ -201,10 +201,30 @@
       stroke-linejoin:round;
     }
 
+    .pins-title{
+      text-align:center;
+      margin:24px 0 12px;
+    }
+
+    .pins-title .brand{
+      font-size:1.15rem;
+      font-weight:700;
+      color:var(--anthrazit);
+      letter-spacing:.3px;
+      text-transform:uppercase;
+    }
+
+    .pins-title .sub{
+      font-size:0.82rem;
+      font-weight:500;
+      color:var(--anthrazit);
+      margin-top:2px;
+    }
+
     .pins{
-      display:flex;
-      flex-direction:column;
-      margin-top:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
       padding-top:16px;
       border-top:1px solid var(--line);
       text-align:left;
@@ -290,12 +310,6 @@
       line-height:1.35;
     }
 
-    .pin-hr{
-      height:1px;
-      background:var(--line);
-      margin:0 4px;
-    }
-
     @media (max-width:380px) {
       .subrole { font-size:0.78rem; }
       .quote { font-size:0.75rem; }
@@ -377,6 +391,10 @@
     </button>
 
     <!-- Pins -->
+    <div class="pins-title">
+      <div class="brand">Budak Experts</div>
+      <div class="sub">Sachverständigen GmbH</div>
+    </div>
     <div class="pins">
       <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
         <div class="pin-icon-wrap">
@@ -398,8 +416,6 @@
           <div class="pin-addr">89079 Ulm</div>
         </div>
       </a>
-
-      <div class="pin-hr"></div>
 
       <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Max-Eyth-Str.+41%2F3%2C+89231+Neu-Ulm" target="_blank" rel="noopener">
         <div class="pin-icon-wrap">
