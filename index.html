@@ -59,7 +59,7 @@
     .name-block{ text-align:left; }
 
     .logo{ 
-      width:50px; 
+      width:140px; 
       max-width:32%;
       height:auto; 
       flex-shrink:0;
@@ -87,9 +87,16 @@
     }
 
     .divider{
-      height:2px;
       margin:16px 0 12px;
-      background:linear-gradient(90deg, var(--anthrazit) 0%, var(--anthrazit) 90%, var(--red) 90%, var(--red) 100%);
+      display:block;
+      width:100%;
+      height:8px;
+    }
+
+    .divider svg{
+      display:block;
+      width:100%;
+      height:100%;
     }
 
     .subrole{
@@ -274,7 +281,11 @@
       <img src="logo.png" alt="Logo Budak Experts" class="logo" />
     </div>
 
-    <div class="divider"></div>
+    <div class="divider">
+      <svg viewBox="0 0 1000 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 L1000,0 L1000,34 L850,34 L780,14 L0,14 Z" fill="#58595B"/>
+      </svg>
+    </div>
 
     <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
     <div class="quote">Spezialisiert auf Karosserie-Schadendiagnose an Porsche-Fahrzeugen.</div>
