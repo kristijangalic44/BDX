@@ -128,21 +128,20 @@
       align-items:center;
       justify-content:center;
       gap:8px;
-      padding:18px 10px 14px; 
-      border-radius:10px;
+      padding:18px 10px; 
+      border-radius:var(--radius);
       background:var(--btn); 
-      border:none;
-      border-top:3px solid var(--red);
+      border:1px solid var(--btn-border);
       text-decoration:none; 
       color:var(--fg); 
-      box-shadow:0 2px 8px rgba(0,0,0,.06);
-      transition:background .15s ease, transform .04s ease, filter .15s ease;
+      box-shadow:var(--shadow);
+      transition:background .15s ease, transform .04s ease, border-color .15s ease, filter .15s ease;
       font-weight:500;
       text-align:center;
       cursor:pointer;
     }
 
-    .btn:hover{ background:var(--btn-hover); filter:brightness(0.98); }
+    .btn:hover{ background:var(--btn-hover); border-color:#dfe3e8; }
     .btn:active{ transform:translateY(1px); }
 
     .ico{ 
@@ -203,7 +202,7 @@
     }
 
     .pins-title{
-      text-align:left;
+      text-align:center;
       margin:24px 0 12px;
     }
 
