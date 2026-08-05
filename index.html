@@ -204,8 +204,8 @@
     }
 
     .pins-title{
-      text-align:center;
-      margin:24px 0 12px;
+      display:inline-block;
+      margin:24px auto 12px;
     }
 
     .pins-title .brand{
@@ -214,14 +214,17 @@
       color:var(--anthrazit);
       letter-spacing:.3px;
       text-transform:uppercase;
+      white-space:nowrap;
     }
 
     .pins-title .sub{
+      display:block;
+      width:100%;
       font-size:0.82rem;
       font-weight:500;
       color:var(--anthrazit);
       margin-top:2px;
-      letter-spacing:2.2px;
+      text-align-last:justify;
     }
 
     .pins{
