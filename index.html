@@ -41,6 +41,35 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
+    .splash{
+      position:fixed;
+      inset:0;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+      animation:splashOut .6s ease forwards;
+      animation-delay:1.1s;
+    }
+
+    .splash img{
+      width:160px;
+      max-width:50vw;
+      height:auto;
+      opacity:0;
+      transform:scale(.9);
+      animation:splashLogo .7s ease forwards;
+    }
+
+    @keyframes splashLogo{
+      to{ opacity:1; transform:scale(1); }
+    }
+
+    @keyframes splashOut{
+      to{ opacity:0; visibility:hidden; pointer-events:none; }
+    }
+
     .card{ 
       width:min(92vw,480px); 
       padding:clamp(16px,5vw,24px); 
@@ -166,9 +195,8 @@
     }
 
     .txt{ 
-      font-size:0.78rem; 
-      font-weight:600; 
-      font-variant-numeric:tabular-nums; 
+      font-size:0.92rem; 
+      font-weight:500; 
       line-height:1.3;
     }
 
@@ -224,7 +252,7 @@
       font-size:0.82rem;
       font-weight:500;
       color:var(--anthrazit);
-      margin-top:-1px;
+      margin-top:-2px;
       text-align-last:justify;
     }
 
@@ -327,6 +355,10 @@
   </style>
 </head>
 <body>
+  <div class="splash" aria-hidden="true">
+    <img src="logo.png" alt="" />
+  </div>
+
   <main class="card">
     <div class="header-row">
       <div class="name-block">
@@ -364,7 +396,7 @@
             <line x1="11" y1="18" x2="13" y2="18"></line>
           </svg>
         </span>
-        <span class="txt">+49 170 469 4340</span>
+        <span class="txt">+49 170 4694340</span>
       </a>
 
       <!-- Website -->
