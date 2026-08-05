@@ -181,22 +181,23 @@
       margin-top:12px;
       padding:14px 16px;
       border-radius:var(--radius);
-      background:#ffffff;
-      border:1.5px solid var(--red);
-      color:var(--red);
-      font-weight:600;
+      background:var(--btn);
+      border:1px solid var(--btn-border);
+      box-shadow:var(--shadow);
+      color:var(--fg);
+      font-weight:500;
       font-size:0.92rem;
       cursor:pointer;
-      transition:background .15s ease, transform .04s ease;
+      transition:background .15s ease, transform .04s ease, border-color .15s ease;
     }
 
-    .btn-save:hover{ background:#fdf1f1; }
+    .btn-save:hover{ background:var(--btn-hover); border-color:#dfe3e8; }
     .btn-save:active{ transform:translateY(1px); }
 
     .btn-save svg{
       width:19px;
       height:19px;
-      stroke:var(--red);
+      stroke:var(--icon);
       fill:none;
       stroke-width:2;
       stroke-linecap:round;
@@ -240,11 +241,19 @@
       display:flex;
       align-items:center;
       gap:14px;
-      padding:12px 4px;
+      padding:14px 16px;
+      border-radius:var(--radius);
+      background:var(--btn);
+      border:1px solid var(--btn-border);
+      box-shadow:var(--shadow);
       text-decoration:none;
       color:inherit;
       cursor:pointer;
+      transition:background .15s ease, transform .04s ease, border-color .15s ease;
     }
+
+    .pin-row:hover{ background:var(--btn-hover); border-color:#dfe3e8; }
+    .pin-row:active{ transform:translateY(1px); }
 
     .pin-icon-wrap{
       position:relative;
