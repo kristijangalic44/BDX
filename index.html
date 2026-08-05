@@ -482,8 +482,26 @@
       card.style.transform = 'scale(' + scale + ')';
       wrap.style.height = (card.offsetHeight * scale) + 'px';
     }
+
+    scaleCard();
     window.addEventListener('load', scaleCard);
     window.addEventListener('resize', scaleCard);
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scaleCard);
+    }
+
+    var logoImg = document.querySelector('.logo');
+    if (logoImg) {
+      if (logoImg.complete) {
+        scaleCard();
+      } else {
+        logoImg.addEventListener('load', scaleCard);
+      }
+    }
+
+    setTimeout(scaleCard, 300);
+    setTimeout(scaleCard, 1000);
   </script>
 </body>
 </html>
