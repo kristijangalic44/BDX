@@ -41,10 +41,19 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
+    .scale-wrap{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      overflow:hidden;
+    }
+
     .card{ 
-      width:min(92vw,520px); 
+      width:480px; 
       padding:24px; 
       text-align:center; 
+      transform-origin:top center;
+      flex-shrink:0;
     }
 
     .header-row{
@@ -309,136 +318,133 @@
       color:var(--anthrazit);
       line-height:1.35;
     }
-
-    @media (max-width:380px) {
-      .subrole { font-size:0.78rem; }
-      .quote { font-size:0.75rem; }
-    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="header-row">
-      <div class="name-block">
-        <h1><span>Gökhan</span> <span>Budak</span></h1>
-        <div class="role">Geschäftsführer</div>
+  <div class="scale-wrap">
+    <main class="card">
+      <div class="header-row">
+        <div class="name-block">
+          <h1><span>Gökhan</span> <span>Budak</span></h1>
+          <div class="role">Geschäftsführer</div>
+        </div>
+        <img src="logo.png" alt="Logo Budak Experts" class="logo" />
       </div>
-      <img src="logo.png" alt="Logo Budak Experts" class="logo" />
-    </div>
 
-    <div class="divider">
-      <svg viewBox="0 0 1000 16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,6 L1000,6 L1000,12 L645,12 L630,9 L0,9 Z" fill="#58595B"/>
-      </svg>
-    </div>
+      <div class="divider">
+        <svg viewBox="0 0 1000 16" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,6 L1000,6 L1000,12 L645,12 L630,9 L0,9 Z" fill="#58595B"/>
+        </svg>
+      </div>
 
-    <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
-    <div class="quote">Spezialisiert auf Karosserie-Schadendiagnose an Porsche-Fahrzeugen.</div>
+      <div class="subrole">KFZ-Sachverständiger · KFZ-Lackierermeister HWK Ulm</div>
+      <div class="quote">Spezialisiert auf Karosserie-Schadendiagnose an Porsche-Fahrzeugen.</div>
 
-    <div class="grid">
-      <!-- Phone 1 -->
-      <a class="btn" href="tel:+4973194026800">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
-          </svg>
-        </span>
-        <span class="txt">+49 731 940 26 800</span>
-      </a>
-
-      <!-- Phone 2 -->
-      <a class="btn" href="tel:+4973194026400">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
-          </svg>
-        </span>
-        <span class="txt">+49 731 940 26 40</span>
-      </a>
-
-      <!-- Printer / Fax -->
-      <a class="btn" href="tel:+4973194026782">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" aria-label="Fax">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-          </svg>
-        </span>
-        <span class="txt">+49 731 940 26 782</span>
-      </a>
-
-      <!-- Email (@) -->
-      <a class="btn" href="mailto:info@budak-experts.de">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24" role="img" aria-label="E-Mail">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-5.5 8.28"></path>
-          </svg>
-        </span>
-        <span class="txt">info@budak-experts.de</span>
-      </a>
-    </div>
-
-    <button class="btn-save" type="button" onclick="downloadVCF()">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
-        <path d="M7 10h5"></path>
-        <path d="M7 14h8"></path>
-        <circle cx="16.5" cy="9" r="1.5"></circle>
-      </svg>
-      Kontakt speichern
-    </button>
-
-    <!-- Pins -->
-    <div class="pins-title">
-      <div class="brand">Budak Experts</div>
-      <div class="sub">Sachverständigen GmbH</div>
-    </div>
-    <div class="pins">
-      <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
-        <div class="pin-icon-wrap">
-          <svg class="pin-outline" viewBox="0 0 24 24" role="img" aria-label="Standort">
-            <path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12Z"></path>
-            <circle cx="12" cy="9" r="2.3"></circle>
-          </svg>
-          <span class="pin-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M4 11l8-7 8 7"></path>
-              <path d="M6 10v9h5v-5h2v5h5v-9"></path>
+      <div class="grid">
+        <!-- Phone 1 -->
+        <a class="btn" href="tel:+4973194026800">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
             </svg>
           </span>
-        </div>
-        <div class="pin-divider"></div>
-        <div class="pin-text">
-          <div class="pin-label">Büro</div>
-          <div class="pin-addr">Pranger 6</div>
-          <div class="pin-addr">89079 Ulm</div>
-        </div>
-      </a>
+          <span class="txt">+49 731 940 26 800</span>
+        </a>
 
-      <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Max-Eyth-Str.+41%2F3%2C+89231+Neu-Ulm" target="_blank" rel="noopener">
-        <div class="pin-icon-wrap">
-          <svg class="pin-outline" viewBox="0 0 24 24" role="img" aria-label="Standort">
-            <path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12Z"></path>
-            <circle cx="12" cy="9" r="2.3"></circle>
-          </svg>
-          <span class="pin-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M20 6L9 17l-5-5"></path>
+        <!-- Phone 2 -->
+        <a class="btn" href="tel:+4973194026400">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Telefon">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.9 19.9 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.9 19.9 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.3 1.77.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.83.27 1.7.45 2.6.57A2 2 0 0 1 22 16.92Z"/>
             </svg>
           </span>
-        </div>
-        <div class="pin-divider"></div>
-        <div class="pin-text">
-          <div class="pin-label">Gutachtenzentrum</div>
-          <div class="pin-addr">Max-Eyth-Str. 41/3</div>
-          <div class="pin-addr">89231 Neu-Ulm</div>
-        </div>
-      </a>
-    </div>
+          <span class="txt">+49 731 940 26 40</span>
+        </a>
 
-  </main>
+        <!-- Printer / Fax -->
+        <a class="btn" href="tel:+4973194026782">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-label="Fax">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </span>
+          <span class="txt">+49 731 940 26 782</span>
+        </a>
+
+        <!-- Email (@) -->
+        <a class="btn" href="mailto:info@budak-experts.de">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-label="E-Mail">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-5.5 8.28"></path>
+            </svg>
+          </span>
+          <span class="txt">info@budak-experts.de</span>
+        </a>
+      </div>
+
+      <button class="btn-save" type="button" onclick="downloadVCF()">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+          <path d="M7 10h5"></path>
+          <path d="M7 14h8"></path>
+          <circle cx="16.5" cy="9" r="1.5"></circle>
+        </svg>
+        Kontakt speichern
+      </button>
+
+      <!-- Pins -->
+      <div class="pins-title">
+        <div class="brand">Budak Experts</div>
+        <div class="sub">Sachverständigen GmbH</div>
+      </div>
+      <div class="pins">
+        <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Pranger+6%2C+89079+Ulm" target="_blank" rel="noopener">
+          <div class="pin-icon-wrap">
+            <svg class="pin-outline" viewBox="0 0 24 24" role="img" aria-label="Standort">
+              <path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12Z"></path>
+              <circle cx="12" cy="9" r="2.3"></circle>
+            </svg>
+            <span class="pin-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 11l8-7 8 7"></path>
+                <path d="M6 10v9h5v-5h2v5h5v-9"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="pin-divider"></div>
+          <div class="pin-text">
+            <div class="pin-label">Büro</div>
+            <div class="pin-addr">Pranger 6</div>
+            <div class="pin-addr">89079 Ulm</div>
+          </div>
+        </a>
+
+        <a class="pin-row" href="https://www.google.com/maps/search/?api=1&query=Max-Eyth-Str.+41%2F3%2C+89231+Neu-Ulm" target="_blank" rel="noopener">
+          <div class="pin-icon-wrap">
+            <svg class="pin-outline" viewBox="0 0 24 24" role="img" aria-label="Standort">
+              <path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12Z"></path>
+              <circle cx="12" cy="9" r="2.3"></circle>
+            </svg>
+            <span class="pin-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </span>
+          </div>
+          <div class="pin-divider"></div>
+          <div class="pin-text">
+            <div class="pin-label">Gutachtenzentrum</div>
+            <div class="pin-addr">Max-Eyth-Str. 41/3</div>
+            <div class="pin-addr">89231 Neu-Ulm</div>
+          </div>
+        </a>
+      </div>
+
+    </main>
+  </div>
 
   <script>
     function downloadVCF(){
@@ -467,6 +473,17 @@
       URL.revokeObjectURL(url);
       a.remove();
     }
+
+    function scaleCard(){
+      var card = document.querySelector('.card');
+      var wrap = document.querySelector('.scale-wrap');
+      var cardWidth = 480;
+      var scale = Math.min(window.innerWidth / cardWidth, 1);
+      card.style.transform = 'scale(' + scale + ')';
+      wrap.style.height = (card.offsetHeight * scale) + 'px';
+    }
+    window.addEventListener('load', scaleCard);
+    window.addEventListener('resize', scaleCard);
   </script>
 </body>
 </html>
